@@ -30,10 +30,26 @@ public class Array {
         return array;
     }
 
+    public static void OddEvenCountArr(int[] arr){
+
+        int evenCount = 0, oddCount = 0;
+
+        for (int num : arr){
+            if (num%2 == 0){
+                evenCount++;
+            } else if (num%2 != 0) {
+                oddCount++;
+            }
+
+        }
+        System.out.println("Even: " + evenCount);
+        System.out.println("Odd: "+ oddCount);
+    }
+
     public static void main(String[] args) {
 
         int[] arr = createArr();
-        printArr(arr);
+        OddEvenCountArr(arr);
 
     }
 }
