@@ -1,47 +1,37 @@
 package com.array;
 
+import java.util.Arrays;
+
 public class Test {
 
-    //limit
-//    int[] arr = {3,3,4,2,4,4,2,4,4};
-//    int limit = arr.length/2;
-//
-//        for (int i= 0; i<arr.length; i++){
-//        int count =0;
-//        for (int j = i; j<arr.length; j++){
-//            if (arr[i] == arr[j]){
-//                count++;
-//
-//            }
-//            if(count > limit){
-//                System.out.println(arr[i]);
-//            }
-//        }
-//
-//    }
-
-
-
     public static void main(String[] args) {
-//        int[] arr = {1,2,2,3,4,4,5,5};
-//
-//
-//        for (int i= 0; i<arr.length; i++){
-//        int count =0;
-//        for (int j = i; j<arr.length; j++) {
-//            if (arr[i] == arr[j]) {
-//                count++;
-//            }
-//        }
-//            if(count >= 2) {
-//                System.out.println(arr[i]);
-//            }
-//
-//    }
-//
-//    }
+        int[] arr = {1, 2, 2, 3, 4, 5, 4, 5, 5};
+        int targetFrequency = 2; // Elements appearing exactly 2 times
+        int n = arr.length;
 
-        
+        // Step 1: Sort the array
+        Arrays.sort(arr);
 
+        // Step 2: Count frequencies using a single loop
+        int count = 0;
+        int elementCount = 0;
+
+        System.out.println("Elements appearing exactly " + targetFrequency + " times:");
+        for (int i = 0; i < n; i++) {
+            elementCount++;
+            // Check if the current element is the last or a new element starts
+            if (i == n - 1 || arr[i] != arr[i + 1]) {
+                if (elementCount == targetFrequency) {
+                    System.out.print(arr[i] + " ");
+                    count++;
+                }
+                elementCount = 0; // Reset the count for the next element
+            }
+        }
+
+        // Step 3: Handle the case where no elements are found
+        if (count == 0) {
+            System.out.println("No element found");
+        }
     }
 }
