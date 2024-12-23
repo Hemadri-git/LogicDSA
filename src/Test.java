@@ -1,5 +1,3 @@
-package com.array;
-
 public class Test
 {
     public static void main(String[] args) {
@@ -13,7 +11,7 @@ public class Test
             }
         }
         System.out.println("Odd : ");
-        for (int i = 0; i<n; i++){
+        for (int i = 1; i<n; i++){
             if (arr[i] % 2 == 1 ){
                 System.out.println(arr[i] + " ");
             }
