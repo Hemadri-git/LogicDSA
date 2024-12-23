@@ -2,26 +2,43 @@ package com.array;
 
 public class PrintDuplicateValuesArr
 {
+    public static boolean isProcessed(int[] arr, int ele, int index){
+        for (int i = 0; i<index; i++){
+            if (arr[i] == ele){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args)
     {
         int[] arr = {1, 2, 2, 3, 4, 4, 5};
         int n = arr.length;
-        int duplicateCount = 0;
+        boolean foundDuplicate = false;
+        int totDup = 0;
 
-        System.out.print("Duplicate Values: ");
+        System.out.print("Duplicate elements : ");
         for (int i = 0; i<n; i++){
-            int count = 1;
-            for (int j = i+1; j<n; j++){
+            if (isProcessed(arr, arr[i], i)){
+                continue;
+            }
+            int count = 0;
+            for (int j = 0; j<n; j++){
                 if (arr[i] == arr[j]){
                     count++;
+
                 }
             }
             if (count>1){
                 System.out.print(arr[i] + " ");
-                duplicateCount++;
+                foundDuplicate = true;
+                totDup++;
             }
         }
-
-        System.out.println("\nDuplicate count: " + duplicateCount);
+        if (!foundDuplicate){
+            System.out.println("Not found");
+        }
+        System.out.println("\nNo of Duplicates: "+ totDup);
     }
 }
