@@ -46,10 +46,22 @@ public class Array {
         System.out.println("Odd: "+ oddCount);
     }
 
+    public static int[] copyArrinRange(int[] org, int from, int to){
+        int len = to - from;
+        int[] copy = new int[len];
+        int index  = 0;
+
+        for (int i = from; i<to; i++){
+            copy[index] = org[i];
+            index++;
+        }
+        return copy;
+    }
     public static void main(String[] args) {
 
         int[] arr = createArr();
-        OddEvenCountArr(arr);
+        int[] des = copyArrinRange(arr,2,4);
+        printArr(des);
 
     }
 }
