@@ -1,4 +1,4 @@
-package binarySearch;
+package com.binarySearch;
 
 public class BSinRange
 {
