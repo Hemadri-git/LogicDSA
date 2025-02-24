@@ -4,7 +4,7 @@ public class ElePresentMoreThanOneTime
 {
     public static void main(String[] args) {
 
-        int[] arr = {1,2,1,3,4,6,2,5,4,  5};
+        int[] arr = {1,2,1,3,4,6,2,5,4};
         int n = arr.length;
         int count=0;
         boolean[] visited = new boolean[n];
