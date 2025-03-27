@@ -1,26 +1,23 @@
 package com.hema.demo;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class Test {
     public static void main(String[] args) {
-        int arr[] = { 1, 3, 4, 6, 2, 5,6,  4, 3, 6};
-        int n = arr.length;
-        boolean[] printed = new boolean[n];
 
-        for (int i = 0; i<n; i++){
-            if (printed[i])
-                continue;
+        List<Integer> numbers = Arrays.asList(5, 23, 1, 43, 55);
 
-            for (int j = i+1; j<n; j++){
-                if (arr[i] == arr[j]){
-                    System.out.println(arr[i]);
-                    printed[i] = true;
-                    break;
-                }
-            }
-        }
+        Consumer<List<Integer>> printEle = list -> list.forEach(System.out::println);
+
+        System.out.println("before sort: ");
+        printEle.accept(numbers);
+
+        numbers.sort((a, b) -> b -  a);
+
+        System.out.println("After sort: ");
+        printEle.accept(numbers);
 
     }
 
